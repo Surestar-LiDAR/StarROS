@@ -115,7 +115,7 @@ void openConfigure(Configure& configure, const std::string& cfg, const std::stri
 void openTcpServer(Reader& reader, const std::string& ip, uint16_t port, Configure& configure)
 {
   auto* stream = new ss::Socket(ss::Socket::udp());
-  stream->bind(InternetEndpoint(2014));
+  stream->bind(InternetEndpoint(port));
   reader.setFormatVersion(Reader::ISF_VER_5);
   reader.setBlockMode(false);
   reader.open(stream);
